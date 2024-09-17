@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>index_template</title>
+    </head>
+    <body>
+        <h1 align="center">{{ inf.name }}</h1>
+        <p align="center">{{inf.email}}|{{inf.phone}}|{{inf.address}}</p>
+        <b><ins>Education</ins></b>
+        {% for edu in edu_list %}
+            <p>
+                <b>{{edu.school}}</b>&emsp;{{edu.address}}<br>
+                <i>{{edu.degree}}</i><br>
+                GPA:{{edu.gpa}}&emsp;{{edu.time}}<br>
+                Core Course:{{edu.course}}
+            </p>
+        {% endfor %}
+        <b><ins>Research Experience</ins></b>
+        {% for res in res_list %}
+            <p>
+                <b>{{res.name}}</b>&emsp;{{res.address}}<br>
+                <i>{{res.tutor}}</i>&emsp;{{res.time}}<br>
+                {{res.content}}
+            </p>
+        {% endfor %}
+       <b><ins>Internship</ins></b>
+        {% for int in int_list %}
+            <p>
+                <b>{{int.name}}</b>&emsp;{{int.address}}<br>
+                <i>{{int.tutor}}</i>&emsp;{{int.time}}<br>
+                {{int.content}}
+            </p>
+        {% endfor %}
+        <b><ins>Honors</ins></b>
+        <p>
+            {% for hon in hon_list %}
+                {{hon.name}}&emsp;{{hon.time}}<br>
+            {% endfor %}
+        </p>        
+        <b><ins>Additional Information</ins></b>
+        <p>
+            {% for add in add_list %}
+                {{add.item}}<br>
+            {% endfor %}
+        </p>
+    </body>
+</html>
